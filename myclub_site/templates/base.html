@@ -1,0 +1,66 @@
+{% load static %}
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>
+      {% block title %}
+      {{ page_title|default:"Main Page" }}
+      {% endblock title %}
+   </title>
+   <link href="{% static 'minireset.min.css' %}" rel="stylesheet" type="text/css">
+   <link href="{% static 'main.css' %}" rel="stylesheet" type="text/css">
+ </head>
+ <body>
+   <header id="header">
+         <img id="logo" src="{% static 'logo.png' %}" alt="" />
+     <div id="top_menu">
+         <div class="link-container"
+         ><a href="" class="link">
+             About
+         </a></div>         
+         <div class="link-container"
+         ><a href="" class="link">
+             Home
+         </a></div>
+         <div class="link-container"
+         ><a href="" class="link">
+             Calendar
+         </a></div> 
+         <div class="link-container"
+         ><a href="/contact" class="link">
+              Contact
+         </a></div>
+      </div>
+   </header>
+   <section class="hero" style="background-image: linear-gradient(to bottom right,
+   #190cac7a,
+   black), url('{% static "top_banner.jpg" %}');">
+      <h1 class="main-heading-1">Astronomy club</h1>     
+      
+   </section>
+   <section class="main-content">
+   <section id="main">  
+     {% block subtitle %}{% endblock subtitle %}
+  <br>
+     {% block content %}
+     <p>Placeholder text in base template. Replace with page content.</p>
+     {% endblock content %}
+   </section>   
+   <aside id="rightsidebar">
+     <nav id="nav">
+     <ul>
+       <li><a href="/add_venue" class="link">Add a Venue</a></li>
+       <li>Menu 2</li>
+       <li>Menu 3</li>
+     </ul>
+     </nav>
+   </aside>
+  </section>
+   <footer id="footer">Copyright &copy;
+     <script type="text/JavaScript">
+      document.write(new Date().getFullYear());
+     </script> MyClub
+   </footer>
+ </body>
+</html>
