@@ -26,7 +26,6 @@ def calender_base(request,year,month):
      month_name = calendar.month_name[month]
      cal= HTMLCalendar().formatmonth(year,month)
      title += "Event Calendar - %s %s" % (month_name,year)
-    #  events_list = Event.objects.all()
      return render(request, 'events/calender_base.html', {'title':title, 'cal':cal})
      #return HttpResponse("<h1>%s</h1><p>%s</p>" % (title,cal)) this shows the basic version of cal which is non-editable
 
