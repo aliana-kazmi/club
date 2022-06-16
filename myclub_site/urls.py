@@ -14,9 +14,11 @@ Including another URLconf from app.urls.py
 from django.contrib import admin
 from django.urls import include, path
 from django.contrib.auth import views as auth_views
+from events.views import index
 from . import contact
 
 urlpatterns = [
+    path('',index,name='default'),
     path('admin/', admin.site.urls),
     path('contact/', contact.contact, name='contact'),
     path(

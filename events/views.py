@@ -4,7 +4,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from datetime import date
 import calendar
 from calendar import HTMLCalendar
-from .models import Event
+from .models import Event, Venue
 from .forms import VenueForm
 
 def index(request):
@@ -29,10 +29,28 @@ def calender_base(request,year,month):
      return render(request, 'events/calender_base.html', {'title':title, 'cal':cal})
      #return HttpResponse("<h1>%s</h1><p>%s</p>" % (title,cal)) this shows the basic version of cal which is non-editable
 
+# Scheduled Events
 def all_events(request):
-    events_list = Event.objects.all()
-    return render(request, 'events/event_list.html',{'events_list':events_list})
+    all_events_list = Event.objects.all()
+    title = 'Scheduled Events'
+    return render(request, 'events/item_list.html',{'title':title, 'items_list':all_events_list})
 
+# local venues
+def local_venues(request):
+    venue_list = Venue.objects.filter(zip_code='226003')
+    title = 'Local Venues'
+    return render(request, 'events/item_list.html',{'title':title, 'items_list':venue_list})
+
+# upcoming events in this month
+def upcoming_events(request, year, month):
+    year = int(year)
+    month = int(month)
+    events_list = Event.objects.filter(
+        event_date__year=year,
+        event_date__month = month
+        )
+    title = f'Scheduled Events In {month}, {year}'
+    return render(request, 'events/item_list.html',{'title':title, 'items_list':events_list})
 
 def add_venue(request):
      submitted = False
@@ -40,7 +58,7 @@ def add_venue(request):
          form = VenueForm(request.POST)
          if form.is_valid():
              form.save()
-             return HttpResponseRedirect('/add_venue/?submitted=True')
+             return HttpResponseRedirect('/add-venue/?submitted=True')
      else:
          form = VenueForm()
          if 'submitted' in request.GET:
