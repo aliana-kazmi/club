@@ -54,13 +54,19 @@
       width: 3.7rem;
   } 
   .link-container {
+      height: 1.4rem;
+      width: 1.4rem;
       padding: 1rem 2rem;
   }  
   .link {
-    color:black;
-    font-size: 1.2em;
+    color: var(--purple-2);
     text-decoration: none;
-  }  
+    transition: all 850ms ease-in-out;
+  } 
+  .link:hover {
+      color:var(--purple-3);
+      font-size: 1.15em;
+  } 
   .hero {
       display: flex;
       flex-direction: column;
