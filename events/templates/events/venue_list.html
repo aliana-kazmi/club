@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}
+ {{ title }} list
+{% endblock title %}
+
+{% block content %}
+<h1 class="main-heading-1">All {{ title }} </h1>
+    {% for venue in venue_list %}
+    <div class="venue-container">
+        <h1 class="main-heading-2">{{ venue.name }}</h1>
+            <p class="venue-details">
+                {{ venue.address }} <br>
+                {{ venue.zip_code }} <br>
+                {{ venue.phone }} <br>
+                <a href="{{ venue.web }}" class="link">{{ venue.web }}</a> <br>
+                {{ venue.email }} <br>
+            </p>
+    </div>  
+    {% endfor %}
+
+{% endblock content %}
+<!--class="title" class="list-of-content" class="event-item" -->

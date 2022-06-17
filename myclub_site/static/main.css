@@ -6,19 +6,19 @@
    --purple-1:#c79dd7;
    --purple-2: #673888;
    --purple-3:#4d1b7b;
-   --pink:#ef4f91;
+   --pink:#c50253c9;
    --dark-blue:#363b74;
    --light-green:rgb(57, 207, 57);
    --dark-green:rgba(57, 207, 57, 0.315);
    --red:rgb(255, 35, 35);
  }
 *{
-   font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 16px;   
     line-height: 1.5;    
     margin: 0;
-   -moz-osx-font-smoothing: grayscale;
-   transition: all 1350ms ease-in-out;
+    -moz-osx-font-smoothing: grayscale;
+    transition: all 1350ms ease-in-out;
     -webkit-font-smoothing: antialiased;
   }
   html {
@@ -81,15 +81,17 @@
       transition: width 1ms ease-in-out;
       width: 100%;
   }
-.title, .main-heading-1 {
-    font-size: 8rem;
+.title, .main-heading-1, .main-heading-2 {
     font-family: 'Rouge Script', cursive;
 }
+.title {
+    font-size: 8rem;
+}
 .main-heading-1 {
+    font-size: 5rem;
     color: var(--purple-2);
 }
 .main-heading-2 {
-    font-family: 'Rouge Script', cursive;
     font-size: 3.5rem;
     /* font-size: 2.2rem; */
       color: var(--dark-blue);
@@ -234,5 +236,14 @@ input {
     border-radius: 3px;
 }
 .required label:after {
-    content: "*";
+    content: " *";
+}
+.venue-container, .event-container {
+    padding: 1.5rem;
+    border: 2px solid var(--purple-2);
+    border-radius: 35px;
+    margin-bottom: 2rem;
+}
+.venue-details, .event-details {
+    padding: 0 3.5rem;
 }

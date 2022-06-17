@@ -33,13 +33,13 @@ def calender_base(request,year,month):
 def all_events(request):
     all_events_list = Event.objects.all()
     title = 'Scheduled Events'
-    return render(request, 'events/item_list.html',{'title':title, 'items_list':all_events_list})
+    return render(request, 'events/event_list.html',{'title':title, 'events_list':all_events_list})
 
 # local venues
 def local_venues(request):
     venue_list = Venue.objects.filter(zip_code='226003')
     title = 'Local Venues'
-    return render(request, 'events/item_list.html',{'title':title, 'items_list':venue_list})
+    return render(request, 'events/venue_list.html',{'title':title, 'venue_list':venue_list})
 
 # upcoming events in this month
 def upcoming_events(request, year, month):
