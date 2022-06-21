@@ -10,6 +10,7 @@
    </title>
    <link href="{% static 'minireset.min.css' %}" rel="stylesheet" type="text/css">
    <link href="{% static 'main.css' %}" rel="stylesheet" type="text/css">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
  </head>
  <body>
    <header id="header">
@@ -31,6 +32,10 @@
          ><a href="/contact" class="link">
               Contact
          </a></div>
+         <div class="search-bar-container">
+           {% block search-bar %}
+           {% endblock search-bar %}
+         </div>
       </div>
    </header>
    <section class="hero" style="background-image: linear-gradient(to bottom right,

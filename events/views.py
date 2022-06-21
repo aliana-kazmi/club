@@ -35,12 +35,6 @@ def all_events(request):
     title = 'Scheduled Events'
     return render(request, 'events/event_list.html',{'title':title, 'events_list':all_events_list})
 
-# local venues
-def local_venues(request):
-    venue_list = Venue.objects.filter(zip_code='226003')
-    title = 'Local Venues'
-    return render(request, 'events/venue_list.html',{'title':title, 'venue_list':venue_list})
-
 # upcoming events in this month
 def upcoming_events(request, year, month):
     year = int(year)
@@ -51,6 +45,39 @@ def upcoming_events(request, year, month):
         )
     title = f'Scheduled Events In {month}, {year}'
     return render(request, 'events/item_list.html',{'title':title, 'items_list':events_list})
+
+def search_events(request):
+    if request.method == "POST":
+        
+        searched=request.POST.get('searched')
+        if searched:
+            pass
+        else:
+            searched=" "
+        event_list = Event.objects.filter(name__contains=searched)
+        return render(request, 'events/search_events.html', {'searched':searched, 'event_list':event_list})
+    else:
+        return render(request, 'events/search_events.html',{})
+    
+
+
+def search_venues(request):
+    if request.method == "POST":
+        
+        searched=request.POST.get('searched')
+        if searched:
+            pass
+        else:
+            searched=" "
+        venue_list = Venue.objects.filter(name__contains=searched)
+        return render(request, 'events/search_venues.html', {'searched':searched, 'venue_list':venue_list})
+    else:
+        return render(request, 'events/search_venues.html',{})
+# local venues
+def local_venues(request):
+    venue_list = Venue.objects.filter(zip_code='226003')
+    title = 'Local Venues'
+    return render(request, 'events/venue_list.html',{'title':title, 'venue_list':venue_list})
 
 def add_venue(request):
      submitted = False

@@ -3,11 +3,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap');
  /*overall*/
  :root {
-   --purple-1:#c79dd7;
-   --purple-2: #673888;
-   --purple-3:#4d1b7b;
-   --pink:#c50253c9;
-   --dark-blue:#363b74;
+   --purple-1:#7209B7;
+   --purple-2: #560BAD;
+   --purple-3:#480CA8;
+   --pink:#F72585;
+   --dark-blue-1:#4CC9F0;
+   --dark-blue-2:#4895EF;
+   --dark-blue-3:#4361EE;
+   --dark-blue-4:#3F37C9;
+   --dark-blue-5:#3A0CA3;
    --light-green:rgb(57, 207, 57);
    --dark-green:rgba(57, 207, 57, 0.315);
    --red:rgb(255, 35, 35);
@@ -32,6 +36,14 @@
       margin-right: auto;
       width: 100vw;  
   }
+  .material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
   #header {
       border-bottom: 1.8px solid rgb(199, 199, 199);
       border-style: none;
@@ -94,7 +106,7 @@
 .main-heading-2 {
     font-size: 3.5rem;
     /* font-size: 2.2rem; */
-      color: var(--dark-blue);
+      color: var(--dark-blue-4);
       padding: 0.7rem;
     /* transform: translateY(-30px); */
 }
@@ -246,4 +258,33 @@ input {
 }
 .venue-details, .event-details {
     padding: 0 3.5rem;
+}
+.search-bar {
+    margin-right: 2.2rem;
+    padding: 0.01rem 1rem;
+    border-radius: 10px;
+    background: #EEEEEE;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+}
+.search-bar input.search{
+    background: inherit;
+    border-color: transparent;
+    border-radius: 5px;  
+    color: #63717f;      
+    float: left;
+    height: 53px;
+    outline: none;
+    transition: background .55s ease;
+    width: 300px;
+  }
+.search {
+    float: right;
+  border: none;
+}
+.search-submit {
+    display: none;
 }
