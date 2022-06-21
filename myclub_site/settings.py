@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition-add your apps here
 
 INSTALLED_APPS = [
+    'members.apps.MembersConfig',
     'events.apps.EventsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
