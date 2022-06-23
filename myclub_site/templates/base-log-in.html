@@ -1,0 +1,78 @@
+{% load static %}
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>
+      {% block title %}
+      {{ page_title|default:"Log in" }}
+      {% endblock title %}
+   </title>
+   <link href="{% static 'minireset.min.css' %}" rel="stylesheet" type="text/css">
+   <link href="{% static 'main-login.css' %}" rel="stylesheet" type="text/css">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+   <script src="https://kit.fontawesome.com/8b5aa90e1a.js" crossorigin="anonymous"></script>
+</head>
+ <body>
+   <header id="header">
+         <img id="logo" src="{% static 'logo.png' %}" alt="" />
+     <div id="top_menu">      
+         <nav class="link-container"
+         ><a href="/" class="link">
+             Home
+         </a></div>
+         <div class="link-container"
+         ><a href="" class="link">
+             About
+         </a></div>   
+         <div class="link-container"
+         ><a href="/" class="link">
+             Calendar
+         </a></div> 
+         <div class="link-container"
+         ><a href="/contact" class="link">
+              Contact
+         </a></div>
+         <div class="search-bar-container">
+           {% block search-bar %}
+           {% endblock search-bar %}
+         </div>
+      </nav>
+   </header>
+   <div class="container" style="background-image: linear-gradient(to bottom right,
+   #3A0CA3,
+   #190cac7a,
+   black), url('{% static "a.12.jpg" %}');">
+       
+      <h1 class="title">Astronomy club</h1>    
+       {% block message %}{% endblock message %}
+        <div class="screen">
+            <div class="screen__content">
+                {% block auth-form %}
+                
+                {% endblock auth-form %}
+                <div class="social-login">
+                    <h3>log in via</h3>
+                    <div class="social-icons">
+                        <a href="#" class="social-login__icon fab fa-instagram"></a>
+                        <a href="#" class="social-login__icon fab fa-facebook"></a>
+                        <a href="#" class="social-login__icon fab fa-twitter"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="screen__background">
+                <span class="screen__background__shape screen__background__shape4"></span>
+                <span class="screen__background__shape screen__background__shape3"></span>		
+                <span class="screen__background__shape screen__background__shape2"></span>
+                <span class="screen__background__shape screen__background__shape1"></span>
+            </div>		
+        </div>
+    </div>
+   <footer id="footer">Copyright &copy;
+     <script type="text/JavaScript">
+      document.write(new Date().getFullYear());
+     </script> MyClub
+   </footer>
+ </body>
+</html>

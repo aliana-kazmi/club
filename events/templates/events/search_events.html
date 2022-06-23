@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}
+ You searched for
+{% endblock title %}
+{% block search-bar %}
+    <form class="search-bar" method="POST" action="{% url 'search-venues' %}">
+        {% csrf_token %}
+        <span class="material-symbols-outlined">Search</span>
+        <input type="search" name="searched" class="search" placeholder="Search Event" aria-label="Search">
+        <button type="submit" class="search-submit"></button>
+    </form>
+{% endblock search-bar %}
+
+{% block content %}
+    {% if searched %}
+    <h1 class="main-heading-1"> You searched for {{ searched }}:</h1> 
+    {% for event in events_list %}
+    <div class="event-container">
+        <h1 class="main-heading-2">{{ event.name }}</h1>
+            <p class="event-details">
+                {{ event.event_date }} <br>
+                {{ event.manager }} <br>
+                <a href="{{ event.venue.web }}" class="link">{{ event.venue.web }}</a> <br>
+                {{ event.attendees }} <br>
+                {{ venue.description }} <br>
+            </p>
+    </div>  
+    {% endfor %}
+    {% else %}
+    <h1 class="main-heading-1"> "{{ searched }}" does not exist. Try another event.
+    {% endif %}
+    
+
+{% endblock content %}
+

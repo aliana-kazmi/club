@@ -1,0 +1,16 @@
+<h1 class="main-heading-2">Announcements</h1>
+ <table>
+   {% for announcement in announcements %}
+    <tr>
+      <td class="event-date"><strong>{{ announcement.date }}</strong></td>
+      
+      <td class="event-name"><span>  </span>{{ announcement.announcement }}</td>
+    </tr>
+    {% empty %}
+    <tr>
+     <td class="event-date"><strong>{% now "m-d-y" %}</strong></td>
+     
+     <td class="event-name"><span>  </span>No Announcements</td>
+   </tr>
+   {% endfor %}
+ </table>
