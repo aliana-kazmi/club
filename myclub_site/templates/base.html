@@ -11,11 +11,11 @@
    <link href="{% static 'minireset.min.css' %}" rel="stylesheet" type="text/css">
    <link href="{% static 'main.css' %}" rel="stylesheet" type="text/css">
    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
- </head>
+  </head>
  <body>
    <header id="header">
          <img id="logo" src="{% static 'logo.png' %}" alt="" />
-     <div id="top_menu">      
+     <nav id="top_menu">      
          <div class="link-container"
          ><a href="/" class="link">
              Home
@@ -29,6 +29,10 @@
              Calendar
          </a></div> 
          <div class="link-container"
+         ><a href="/members/login" class="link">
+              Log In
+         </a></div>
+         <div class="link-container"
          ><a href="/contact" class="link">
               Contact
          </a></div>
@@ -36,7 +40,7 @@
            {% block search-bar %}
            {% endblock search-bar %}
          </div>
-      </div>
+        </nav>
    </header>
    <section class="hero" style="background-image: linear-gradient(to bottom right,
    #190cac7a,

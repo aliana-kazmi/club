@@ -51,6 +51,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+LOGIN_REDIRECT_URL = '/'
+
 ROOT_URLCONF = 'myclub_site.urls'
 # list your templates here
 TEMPLATES = [

@@ -19,8 +19,8 @@ from . import contact
 
 urlpatterns = [
     path('',index,name='default'),
-    path('admin/', admin.site.urls),
     path('contact/', contact.contact, name='contact'),
+    path('admin/', admin.site.urls),
     path(
         'admin/password_reset/',
         auth_views.PasswordResetView.as_view(),
@@ -42,4 +42,6 @@ urlpatterns = [
         name  = 'password_reset_complete',
     ),
     path('', include('events.urls')),#this is what the url should start with then will come the year and month
+    path('members/', include('django.contrib.auth.urls')),#for using authentication provided by django
+    path('members/', include('members.urls'))
 ]
