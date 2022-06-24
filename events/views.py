@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from datetime import date
 import calendar
-from calendar import HTMLCalendar
+from calendar import Calendar, HTMLCalendar
 from .models import Event, Venue
 from .forms import VenueForm
 
@@ -43,8 +43,9 @@ def upcoming_events(request, year, month):
         event_date__year=year,
         event_date__month = month
         )
-    title = f'Scheduled Events In {month}, {year}'
-    return render(request, 'events/item_list.html',{'title':title, 'items_list':events_list})
+    month_name = calendar.month_name(month)
+    title = f'Scheduled Events In {month_name}, {year}'
+    return render(request, 'events/event_list.html',{'title':title, 'events_list':events_list})
 
 def search_events(request):
     if request.method == "POST":

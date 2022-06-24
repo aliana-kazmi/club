@@ -14,11 +14,13 @@ def login_user(request):
         if user is not None:
             if user.is_active:
                 login(request, user)
-                return redirect('search-events')
         else:
             messages.error(request,'username or password not correct')
             return redirect('login')
     else:
         form = AuthenticationForm()
         return render(request, 'registration/login.html', {'form': form})
+    
+def logout_user(request):
+    logout(request)
     

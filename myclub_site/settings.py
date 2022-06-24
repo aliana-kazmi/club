@@ -52,6 +52,7 @@ MIDDLEWARE = [
 ]
 
 LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/events/2030/12/'
 
 ROOT_URLCONF = 'myclub_site.urls'
 # list your templates here

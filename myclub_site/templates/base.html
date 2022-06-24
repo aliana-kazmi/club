@@ -28,10 +28,15 @@
          ><a href="/" class="link">
              Calendar
          </a></div> 
-         <div class="link-container"
-         ><a href="/members/login" class="link">
-              Log In
-         </a></div>
+         
+         <div class="link-container">
+           {% if user.is_authenticated %}
+           <a href="/members/logout" class="link">   
+                Log Out</a>
+              {% else %}
+              <a href="/members/login" class="link">   
+              Log In</a>{% endif %}
+         </div>
          <div class="link-container"
          ><a href="/contact" class="link">
               Contact
@@ -60,6 +65,7 @@
      <nav id="nav">
      <ul>
        <li><a href="/all-events" class="link">Scheduled Events</a></li>
+       <!-- <li><a href="/" class="link"></a></li> -->
        <li><a href="/local-venues" class="link">Local Venues</a></li>
        <li><a href="/add-venue" class="link">Add a Venue</a></li>
      </ul>
