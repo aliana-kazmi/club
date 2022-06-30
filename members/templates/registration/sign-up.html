@@ -1,19 +1,27 @@
 {% extends 'base-log-in.html' %}
-{% block title %}Log In{% endblock title %}
+{% block title %}Sign Up{% endblock title %}
+
+{% block message %}
+    
+    
+{% endblock message %}
 {% block auth-form %}
-<h1 class="auth-heading">Log In</h1>
-<form class="login" method="POST" action="">
+<h1 class="auth-heading">Sign up</h1>
+<form class="sign-up" method="POST" action="{% url 'sign-up' %}">
     {% csrf_token %}
-    <div class="login__field">
+    <ul>
+     {{ form.as_ul }} 
+    </ul>
+    <!-- <div class="signup__field">
         <i class="login__icon fas fa-user"></i>
-        <input type="text" name="username" class="login__input" placeholder="User name / Email">
+        <input type="text" name="username" class="signup__input" placeholder="User name / Email">
         {% for error in form.username.errors %}
          <p class="text-danger">{{ error }}</p>
     {% endfor %}
     </div>
-    <div class="login__field">
+    <div class="signup__field">
         <i class="login__icon fas fa-lock"></i>
-        <input name="password" type="password" class="login__input" placeholder="Password">
+        <input name="password" type="password" class="signup__input" placeholder="Password">
         {% if form.non_field_errors %}
         {% for error in form.non_field_errors %}
         <div class="text-danger-con">
@@ -21,9 +29,9 @@
         </div> 
         {% endfor %}
   {% endif %}
-    </div>
+    </div> -->
     <button class="button login__submit">
-        <span class="button__text">Log In Now</span>
+        <span class="button__text">Sign Up</span>
         <i class="button__icon fas fa-chevron-right"></i>
     </button>				
 </form>

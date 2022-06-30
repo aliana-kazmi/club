@@ -43,8 +43,8 @@ def upcoming_events(request, year, month):
         event_date__year=year,
         event_date__month = month
         )
-    month_name = calendar.month_name(month)
-    title = f'Scheduled Events In {month_name}, {year}'
+    month_name = calendar.month_name[month]
+    title = "Scheduled Events In %s, %s" %(month_name, year)
     return render(request, 'events/event_list.html',{'title':title, 'events_list':events_list})
 
 def search_events(request):

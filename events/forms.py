@@ -9,12 +9,12 @@ class VenueForm(ModelForm):
         # we’re using the special __all__ value to tell Django to use all the form fields
         fields = '__all__'
         labels = {
-			'name': 'Name     ',
-			'address': '',
-			'zip_code': '',
-			'phone': '',
-			'web': '',
-			'email_address': '',
+			'name': 'Name',
+			'address': "Venue's Address",
+			'zip_code': 'Zip Code',
+			'phone': 'Phone number',
+			'web': 'Website',
+			'email_address': 'Email Address',
 			'venue_image': '',			
 		}
         widgets = {

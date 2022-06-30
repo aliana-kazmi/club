@@ -82,8 +82,6 @@
     background-repeat: no-repeat;
     background-size: cover;
 	display: flex;
-    /* aspect-ratio:1; */
-  	/* overflow:hidden; */
     flex-direction: column;
 	align-items: center;
 	justify-content: center;
@@ -251,6 +249,13 @@
 	transform: scale(1.5);	
 }
 
+.auth-heading{
+	Color:white;
+	font-size: 4rem;
+	font-family: Raleway;
+	transform: translateY(200%);
+}
+
 @media screen and (max-width: 849px) {
 	.title {
 		font-size: 6rem;
@@ -268,13 +273,8 @@
 	right: 120px;	
 	border-radius: 0 72px 0 0;
 }
+}
 
-}
-.auth-heading {
-	Color:white;
-	font-size: 4rem;
-	font-family: Raleway;
-}
 .text-danger-con {
 	background-color: rgb(255, 91, 91);
 	width: 15rem;
